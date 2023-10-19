@@ -22,14 +22,14 @@ node {
             encoded="$(cat encodedData.txt)"
             
             file_name_without_extension=${base_name%.*}        
-            script_path='Jonathan\\\\'"${file_name_without_extension}"                        
+            script_path='CI_CD_QA\\\\'"${file_name_without_extension}"                        
             
             payload='{"scriptPath": "'$script_path'","body":"'$encoded'"}'
                        
             token='eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VyOjExZThiMTIxLTRmZDEtOGI1MC1iYzg4LTAyNDJhYzExMDAwMiIsInJvbGUiOnsibGVnYWN5SWQiOiJBZG1pbmlzdHJhdG9yIiwic2Vjb25kYXJ5Um9sZXMiOltdLCJpZCI6IjExZTg0NzNhLTgyMWUtYzUxMC04MDMyLTAyNDJhYzExMDAwNSIsImxhc3RVcGRhdGVUaW1lIjoxNjk0NzAxMDc5MDAwfSwiaWNBZ2VudElkIjoiNjg5MzYyNSIsImlzcyI6Imh0dHBzOlwvXC9hdXRoLm5pY2UtaW5jb250YWN0LmNvbSIsImdpdmVuX25hbWUiOiJLZXZpbiIsImF1ZCI6ImluY29udGFjdCBhZG1pbkBpbmNvbnRhY3QgaW5jLiIsImljU1BJZCI6IjU4IiwiaWNCVUlkIjo0NTk3MzU5LCJuYW1lIjoia2V2aW5AYjMyLmNvbSIsInRlbmFudElkIjoiMTFlODQ3M2EtN2ZhNi1lNzQwLTg3ODMtMDI0MmFjMTEwMDA2IiwiZXhwIjoxNjk3NzQ4NTE2LCJpYXQiOjE2OTc3NDQ5MTYsImZhbWlseV9uYW1lIjoiSmVuc2VuIiwidGVuYW50IjoiU0VfRGVtb19CMzIiLCJ2aWV3cyI6e30sImljQ2x1c3RlcklkIjoiQjMyIn0.pTGh_YJ-QTf45Y11hku1oYgpGN45LbC_LOFtUslAyqCA4lVMyYb-TXPynNIdPMOmEjlw1GhXFkt3oKBlKbVPxxiQRwZ42e_AXPsnsIdpx-SxZHNqiVuR0dCW7w455WC9GBLDzX_s0UbHlDpsxk9ncagLNL3q8vSHoJgOmxhC67s'
 
             result=$(curl --location --request POST \
-                'https://api-do26.dev.nice-incontact.com/inContactAPI/services/v18.0/scripts' --header 'accept: */*' \
+                'https://api-b32.nice-incontact.com/inContactAPI/services/v18.0/scripts' --header 'accept: */*' \
                 --header 'Content-Type: application/json' \
                 --header 'Authorization: Bearer '"$token" \
                 --data-raw "$payload") 
